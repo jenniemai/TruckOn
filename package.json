@@ -1,0 +1,25 @@
+{
+  "name": "truck-on",
+  "description": "food truck app - Truck-On",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "3.x",
+    "mongodb": "*",
+    "mongoskin": "*"
+  },
+  "devDependencies": {
+    "phantomjs": "~1.9",
+    "karma": "~0.10.4",
+    "karma-junit-reporter": "~0.1",
+    "karma-jasmine": "~0.1.3",
+    "karma-ng-scenario": "~0.1",
+    "karma-chrome-launcher": "~0.1.0",
+    "karma-firefox-launcher": "~0.1.0",
+    "karma-html2js-preprocessor": "~0.1.0",
+    "karma-requirejs": "~0.2.0",
+    "karma-coffee-preprocessor": "~0.1.0",
+    "karma-phantomjs-launcher": "~0.1.0",
+    "karma-script-launcher": "~0.1.0"
+   }
+}

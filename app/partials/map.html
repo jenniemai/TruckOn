@@ -1,0 +1,41 @@
+<div class="wrapper">
+    <div class="container">
+
+        <input id="map-search-id" class="search-box" type="search" placeholder="Filter and tab.." ng-model="query" ng-blur="map.updateMarkers(filteredMarkers)">
+
+        <!-- works around JS error when directly using filter in markers. This will filter the list in a separate repeater which
+        will update the map.markers model -->
+        <d style="display:none" ng-repeat="marker in filteredMarkers = (gmarkers | filter:query)"></d>
+
+        <google-map center="map.center" zoom="map.zoom" draggable="true" control="map.control" events="map.events" bounds="map.bounds">
+            <markers models="map.markers" coords="'self'" click="'onClick'" icon="'icon'" doCluster="map.doCluster" clusterOptions="map.clusterOptions">
+            </markers>
+        </google-map>
+    </div>
+
+    <div class="map-detail-view">
+        <table class="detail-table">
+            <thead class="detail-table-header">
+                <tr>
+                    <th ng-click="predicate = 'name'; reverse=!reverse">Name</th>
+                    <th ng-click="predicate = 'description'; reverse=!reverse">Description</th>
+                    <th ng-click="predicate = 'address'; reverse=!reverse">Location</th>
+                    <th ng-click="predicate = 'schedule[0].startTime'; reverse=!reverse">Open Times</th>
+                    <th ng-click="predicate = 'facilityType'; reverse=!reverse">Facility</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="detail-row" ng-repeat="truck in visibleTrucks | orderBy:predicate:reverse" ng-click="updateMarker(truck)">
+                    <td>{{truck.name}}</td>
+                    <td>{{truck.description}}</td>
+                    <td>{{truck.address}}</td>
+                    <td>{{truck.schedule[0].startTime}} to {{truck.schedule[0].endTime}}</td>
+                    <td>{{truck.facilityType}}</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+

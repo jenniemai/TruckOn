@@ -1,0 +1,648 @@
+{
+    "name": "Cupkates Bakery, LLC",
+    "approvedDate": "2013-10-10T15:57:58",
+    "permit": "13MFF-0068",
+    "locations": [
+      {
+        "address": "50 01ST ST",
+        "locationDescr": "01ST ST: STEVENSON ST to JESSIE ST (21 - 56)",
+        "latitude": 37.7901490737255,
+        "longitude": -122.398658184604,
+        "schedule": [
+          {
+            "dayOrder": "1",
+            "dayOfWeek": "Monday",
+            "startTime": "11AM",
+            "endTime": "2PM"
+          }
+        ],
+        "hasSeenSchedule": {
+          "1": true
+        }
+      },
+      {
+        "address": "430 CALIFORNIA ST",
+        "locationDescr": "CALIFORNIA ST: SANSOME ST to LEIDESDORFF ST (400 - 448)",
+        "latitude": 37.7932622069231,
+        "longitude": -122.401789091363,
+        "schedule": [
+          {
+            "dayOrder": "2",
+            "dayOfWeek": "Tuesday",
+            "startTime": "11AM",
+            "endTime": "2PM"
+          },
+          {
+            "dayOrder": "4",
+            "dayOfWeek": "Thursday",
+            "startTime": "11AM",
+            "endTime": "2PM"
+          }
+        ],
+        "hasSeenSchedule": {
+          "2": true,
+          "4": true
+        }
+      },
+      {
+        "address": "25 MONTGOMERY ST",
+        "locationDescr": "MONTGOMERY ST: POST ST to SUTTER ST (1 - 99)",
+        "latitude": 37.7894866961278,
+        "longitude": -122.402467438004,
+        "schedule": [
+          {
+            "dayOrder": "3",
+            "dayOfWeek": "Wednesday",
+            "startTime": "11AM",
+            "endTime": "2PM"
+          }
+        ],
+        "hasSeenSchedule": {
+          "3": true
+        }
+      },
+      {
+        "address": "115 SANSOME ST",
+        "locationDescr": "SANSOME ST: BUSH ST to PINE ST (100 - 199)",
+        "latitude": 37.7914265413321,
+        "longitude": -122.401037856688,
+        "schedule": [
+          {
+            "dayOrder": "5",
+            "dayOfWeek": "Friday",
+            "startTime": "11AM",
+            "endTime": "2PM"
+          }
+        ],
+        "hasSeenSchedule": {
+          "5": true
+        }
+      }
+    ],
+    "description": "Cupcakes",
+    "facilityType": "Truck",
+    "_id": "533946370665659d8a1d1301"
+  },
+  {
+    "name": "Expresso Subito, LLC.",
+    "approvedDate": "2014-03-11T12:48:02",
+    "permit": "14MFF-0019",
+    "locations": [
+      {
+        "address": "84 02ND ST",
+        "locationDescr": "02ND ST: JESSIE ST to MISSION ST (69 - 99)",
+        "latitude": 37.7881050616463,
+        "longitude": -122.400289778405,
+        "schedule": [
+          {
+            "dayOrder": "1",
+            "dayOfWeek": "Monday",
+            "startTime": "6AM",
+            "endTime": "10AM"
+          },
+          {
+            "dayOrder": "3",
+            "dayOfWeek": "Wednesday",
+            "startTime": "6AM",
+            "endTime": "10AM"
+          },
+          {
+            "dayOrder": "5",
+            "dayOfWeek": "Friday",
+            "startTime": "6AM",
+            "endTime": "10AM"
+          }
+        ],
+        "hasSeenSchedule": {
+          "1": true,
+          "3": true,
+          "5": true
+        }
+      },
+      {
+        "address": "150 CALIFORNIA ST",
+        "locationDescr": "CALIFORNIA ST: DAVIS ST to FRONT ST (100 - 199)",
+        "latitude": 37.7936733815047,
+        "longitude": -122.398463509486,
+        "schedule": [
+          {
+            "dayOrder": "1",
+            "dayOfWeek": "Monday",
+            "startTime": "6AM",
+            "endTime": "5PM"
+          },
+          {
+            "dayOrder": "2",
+            "dayOfWeek": "Tuesday",
+            "startTime": "6AM",
+            "endTime": "10AM"
+          },
+          {
+            "dayOrder": "3",
+            "dayOfWeek": "Wednesday",
+            "startTime": "6AM",
+            "endTime": "5PM"
+          },
+          {
+            "dayOrder": "4",
+            "dayOfWeek": "Thursday",
+            "startTime": "6AM",
+            "endTime": "10AM"
+          },
+          {
+            "dayOrder": "5",
+            "dayOfWeek": "Friday",
+            "startTime": "6AM",
+            "endTime": "5PM"
+          }
+        ],
+        "hasSeenSchedule": {
+          "1": true,
+          "2": true,
+          "3": true,
+          "4": true,
+          "5": true
+        }
+      }
+    ],
+    "description": "Espresso Drinks",
+    "facilityType": "Truck",
+    "_id": "533946370665659d8a1d1306"
+  },
+  {
+    "name": "Cheese Gone Wild",
+    "approvedDate": "2014-03-13T12:25:46",
+    "permit": "14MFF-0035",
+    "locations": [
+      {
+        "address": "400 HOWARD ST",
+        "locationDescr": "01ST ST: NATOMA ST to HOWARD ST (165 - 199)",
+        "latitude": 37.7891192076677,
+        "longitude": -122.395881039335,
+        "schedule": [
+          {
+            "dayOrder": "2",
+            "dayOfWeek": "Tuesday",
+            "startTime": "10AM",
+            "endTime": "3PM"
+          }
+        ],
+        "hasSeenSchedule": {
+          "2": true
+        }
+      },
+      {
+        "address": null,
+        "locationDescr": "DAVIS ST: DAVIS CT \\ JACKSON ST to BROADWAY (500 - 699)",
+        "latitude": 37.7982529941715,
+        "longitude": -122.399171569524,
+        "schedule": [],
+        "hasSeenSchedule": {}
+      },
+      {
+        "address": "555 HOWARD ST",
+        "locationDescr": "HOWARD ST: 01ST ST to MALDEN ALY (500 - 589)",
+        "latitude": 37.78737884181,
+        "longitude": -122.396874967163,
+        "schedule": [
+          {
+            "dayOrder": "4",
+            "dayOfWeek": "Thursday",
+            "startTime": "4PM",
+            "endTime": "8PM"
+          },
+          {
+            "dayOrder": "5",
+            "dayOfWeek": "Friday",
+            "startTime": "3PM",
+            "endTime": "8PM"
+          }
+        ],
+        "hasSeenSchedule": {
+          "4": true,
+          "5": true
+        }
+      },
+      {
+        "address": "233 SANSOME ST",
+        "locationDescr": "SANSOME ST: PINE ST to CALIFORNIA ST (200 - 299)",
+        "latitude": 37.792609401119,
+        "longitude": -122.401314905451,
+        "schedule": [
+          {
+            "dayOrder": "4",
+            "dayOfWeek": "Thursday",
+            "startTime": "10AM",
+            "endTime": "2PM"
+          }
+        ],
+        "hasSeenSchedule": {
+          "4": true
+        }
+      },
+      {
+        "address": "1801 VAN NESS AVE",
+        "locationDescr": "VAN NESS AVE: CLAY ST to WASHINGTON ST (1801 - 1899) -- WEST --",
+        "latitude": 37.7923033830753,
+        "longitude": -122.423131922094,
+        "schedule": [
+          {
+            "dayOrder": "6",
+            "dayOfWeek": "Saturday",
+            "startTime": "6AM",
+            "endTime": "8PM"
+          },
+          {
+            "dayOrder": "1",
+            "dayOfWeek": "Monday",
+            "startTime": "6AM",
+            "endTime": "8PM"
+          },
+          {
+            "dayOrder": "4",
+            "dayOfWeek": "Thursday",
+            "startTime": "6AM",
+            "endTime": "10AM"
+          }
+        ],
+        "hasSeenSchedule": {
+          "1": true,
+          "4": true,
+          "6": true
+        }
+      }
+    ],
+    "description": "Grilled Cheese Sandwiches",
+    "facilityType": "Truck",
+    "_id": "533946370665659d8a1d1302"
+  },
+  {
+    "name": "Senor Sisig",
+    "approvedDate": "2014-03-21T11:18:59",
+    "permit": "14MFF-0006",
+    "locations": [
+      {
+        "address": "120 02ND ST",
+        "locationDescr": "02ND ST: MISSION ST to MINNA ST (100 - 130)",
+        "latitude": 37.7875140607381,
+        "longitude": -122.399566331429,
+        "schedule": [
+          {
+            "dayOrder": "1",
+            "dayOfWeek": "Monday",
+            "startTime": "11AM",
+            "endTime": "2PM"
+          },
+          {
+            "dayOrder": "2",
+            "dayOfWeek": "Tuesday",
+            "startTime": "11AM",
+            "endTime": "2PM"
+          },
+          {
+            "dayOrder": "3",
+            "dayOfWeek": "Wednesday",
+            "startTime": "11AM",
+            "endTime": "2PM"
+          },
+          {
+            "dayOrder": "4",
+            "dayOfWeek": "Thursday",
+            "startTime": "11AM",
+            "endTime": "2PM"
+          },
+          {
+            "dayOrder": "5",
+            "dayOfWeek": "Friday",
+            "startTime": "11AM",
+            "endTime": "2PM"
+          }
+        ],
+        "hasSeenSchedule": {
+          "1": true,
+          "2": true,
+          "3": true,
+          "4": true,
+          "5": true
+        }
+      },
+      {
+        "address": "120 ELLIS ST",
+        "locationDescr": "ELLIS ST: POWELL ST to CYRIL MAGNIN ST (100 - 148)",
+        "latitude": 37.7856100863691,
+        "longitude": -122.408154764345,
+        "schedule": [
+          {
+            "dayOrder": "6",
+            "dayOfWeek": "Saturday",
+            "startTime": "11AM",
+            "endTime": "6PM"
+          },
+          {
+            "dayOrder": "0",
+            "dayOfWeek": "Sunday",
+            "startTime": "11AM",
+            "endTime": "6PM"
+          }
+        ],
+        "hasSeenSchedule": {
+          "0": true,
+          "6": true
+        }
+      },
+      {
+        "address": "300 PINE ST",
+        "locationDescr": "PINE ST: SANSOME ST to CENTURY PL (300 - 340)",
+        "latitude": null,
+        "longitude": null,
+        "schedule": [
+          {
+            "dayOrder": "1",
+            "dayOfWeek": "Monday",
+            "startTime": "11AM",
+            "endTime": "2PM"
+          },
+          {
+            "dayOrder": "2",
+            "dayOfWeek": "Tuesday",
+            "startTime": "11AM",
+            "endTime": "2PM"
+          },
+          {
+            "dayOrder": "3",
+            "dayOfWeek": "Wednesday",
+            "startTime": "11AM",
+            "endTime": "2PM"
+          },
+          {
+            "dayOrder": "4",
+            "dayOfWeek": "Thursday",
+            "startTime": "11AM",
+            "endTime": "2PM"
+          },
+          {
+            "dayOrder": "5",
+            "dayOfWeek": "Friday",
+            "startTime": "11AM",
+            "endTime": "2PM"
+          }
+        ],
+        "hasSeenSchedule": {
+          "1": true,
+          "2": true,
+          "3": true,
+          "4": true,
+          "5": true
+        }
+      }
+    ],
+    "description": "Filipino fusion food: taco: burrito: nachos: rice plates",
+    "facilityType": "Truck",
+    "_id": "533946370665659d8a1d1307"
+  },
+  {
+    "name": "Bombay Blvd.",
+    "approvedDate": null,
+    "permit": "11MFF-0040",
+    "locations": [
+      {
+        "address": "86 03RD ST",
+        "locationDescr": "03RD ST: JESSIE ST to MISSION ST (68 - 99)",
+        "latitude": 37.7862060821039,
+        "longitude": -122.402532491346,
+        "schedule": [
+          {
+            "dayOrder": "0",
+            "dayOfWeek": "Sunday",
+            "startTime": "10AM",
+            "endTime": "3PM"
+          },
+          {
+            "dayOrder": "6",
+            "dayOfWeek": "Saturday",
+            "startTime": "5PM",
+            "endTime": "8PM"
+          },
+          {
+            "dayOrder": "1",
+            "dayOfWeek": "Monday",
+            "startTime": "10AM",
+            "endTime": "3PM"
+          },
+          {
+            "dayOrder": "2",
+            "dayOfWeek": "Tuesday",
+            "startTime": "10AM",
+            "endTime": "3PM"
+          },
+          {
+            "dayOrder": "3",
+            "dayOfWeek": "Wednesday",
+            "startTime": "10AM",
+            "endTime": "3PM"
+          },
+          {
+            "dayOrder": "4",
+            "dayOfWeek": "Thursday",
+            "startTime": "10AM",
+            "endTime": "3PM"
+          },
+          {
+            "dayOrder": "5",
+            "dayOfWeek": "Friday",
+            "startTime": "10AM",
+            "endTime": "3PM"
+          }
+        ],
+        "hasSeenSchedule": {
+          "0": true,
+          "1": true,
+          "2": true,
+          "3": true,
+          "4": true,
+          "5": true,
+          "6": true
+        }
+      },
+      {
+        "address": "333 MARKET ST",
+        "locationDescr": "BEALE ST: DAVIS ST \\ MARKET ST \\ PINE ST to MISSION ST (1 - 99)",
+        "latitude": 37.791777988406,
+        "longitude": -122.397517086469,
+        "schedule": [
+          {
+            "dayOrder": "0",
+            "dayOfWeek": "Sunday",
+            "startTime": "10AM",
+            "endTime": "3PM"
+          },
+          {
+            "dayOrder": "6",
+            "dayOfWeek": "Saturday",
+            "startTime": "5PM",
+            "endTime": "8PM"
+          },
+          {
+            "dayOrder": "1",
+            "dayOfWeek": "Monday",
+            "startTime": "10AM",
+            "endTime": "3PM"
+          },
+          {
+            "dayOrder": "2",
+            "dayOfWeek": "Tuesday",
+            "startTime": "10AM",
+            "endTime": "3PM"
+          },
+          {
+            "dayOrder": "3",
+            "dayOfWeek": "Wednesday",
+            "startTime": "10AM",
+            "endTime": "3PM"
+          },
+          {
+            "dayOrder": "4",
+            "dayOfWeek": "Thursday",
+            "startTime": "10AM",
+            "endTime": "3PM"
+          },
+          {
+            "dayOrder": "5",
+            "dayOfWeek": "Friday",
+            "startTime": "10AM",
+            "endTime": "3PM"
+          }
+        ],
+        "hasSeenSchedule": {
+          "0": true,
+          "1": true,
+          "2": true,
+          "3": true,
+          "4": true,
+          "5": true,
+          "6": true
+        }
+      },
+      {
+        "address": "50 MAIN ST",
+        "locationDescr": "MAIN ST: MARKET ST to MISSION ST (1 - 99)",
+        "latitude": null,
+        "longitude": null,
+        "schedule": [
+          {
+            "dayOrder": "0",
+            "dayOfWeek": "Sunday",
+            "startTime": "10AM",
+            "endTime": "3PM"
+          },
+          {
+            "dayOrder": "6",
+            "dayOfWeek": "Saturday",
+            "startTime": "5PM",
+            "endTime": "8PM"
+          },
+          {
+            "dayOrder": "1",
+            "dayOfWeek": "Monday",
+            "startTime": "10AM",
+            "endTime": "3PM"
+          },
+          {
+            "dayOrder": "2",
+            "dayOfWeek": "Tuesday",
+            "startTime": "10AM",
+            "endTime": "3PM"
+          },
+          {
+            "dayOrder": "3",
+            "dayOfWeek": "Wednesday",
+            "startTime": "10AM",
+            "endTime": "3PM"
+          },
+          {
+            "dayOrder": "4",
+            "dayOfWeek": "Thursday",
+            "startTime": "10AM",
+            "endTime": "3PM"
+          },
+          {
+            "dayOrder": "5",
+            "dayOfWeek": "Friday",
+            "startTime": "10AM",
+            "endTime": "3PM"
+          }
+        ],
+        "hasSeenSchedule": {
+          "0": true,
+          "1": true,
+          "2": true,
+          "3": true,
+          "4": true,
+          "5": true,
+          "6": true
+        }
+      },
+      {
+        "address": "561 MISSION ST",
+        "locationDescr": "MISSION ST: SHAW ALY to ANTHONY ST (543 - 586)",
+        "latitude": null,
+        "longitude": null,
+        "schedule": [
+          {
+            "dayOrder": "0",
+            "dayOfWeek": "Sunday",
+            "startTime": "10AM",
+            "endTime": "3PM"
+          },
+          {
+            "dayOrder": "6",
+            "dayOfWeek": "Saturday",
+            "startTime": "5PM",
+            "endTime": "8PM"
+          },
+          {
+            "dayOrder": "1",
+            "dayOfWeek": "Monday",
+            "startTime": "10AM",
+            "endTime": "3PM"
+          },
+          {
+            "dayOrder": "2",
+            "dayOfWeek": "Tuesday",
+            "startTime": "10AM",
+            "endTime": "3PM"
+          },
+          {
+            "dayOrder": "3",
+            "dayOfWeek": "Wednesday",
+            "startTime": "10AM",
+            "endTime": "3PM"
+          },
+          {
+            "dayOrder": "4",
+            "dayOfWeek": "Thursday",
+            "startTime": "10AM",
+            "endTime": "3PM"
+          },
+          {
+            "dayOrder": "5",
+            "dayOfWeek": "Friday",
+            "startTime": "10AM",
+            "endTime": "3PM"
+          }
+        ],
+        "hasSeenSchedule": {
+          "0": true,
+          "1": true,
+          "2": true,
+          "3": true,
+          "4": true,
+          "5": true,
+          "6": true
+        }
+      }
+    ],
+    "description": "Indian Style: BBQ: Variety of Curries: Rice: Wraps: Breads (Naan: Rotis: Parathas): Desserts: Pizza.  Beverages: Condiments: Indian Soups: Salads & Appetizer Varieties.",
+    "facilityType": "Truck",
+    "_id": "533946370665659d8a1d130c"
+  }]

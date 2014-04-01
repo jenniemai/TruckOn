@@ -1,0 +1,215 @@
+html, body, .viewContainer {
+
+position:relative;
+ font-family: sans-serif;
+ font-size:14px;
+  height: 100%;
+  width:100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.viewContainer {
+  position: relative;
+  top:120px; /*account for fixed header */
+
+}
+
+.header {
+
+  width:100%;
+   background-image: url(../img/header-bg-full1.png);
+   background-position: -890px -60px;
+   height:120px;
+    position: fixed;
+    top:0; left:0;
+    border-bottom: 2px #EC7C58 solid;
+}
+
+.fixed {   
+    width:100%;
+    z-index:2;
+    height:120px;
+    position: fixed;   
+}
+
+
+.banner-title {
+
+  display:inline-block;
+  background-image: url(../img/appname-truckon.png);
+  background-repeat: no-repeat;
+  width: 130px;
+  height: 34px;
+  margin-left: 15px;
+  margin-top: 30px;
+  vertical-align: top;
+
+}
+
+.search-box {
+   position: fixed;
+   z-index:10000;
+top: 70px;
+left: 550px;
+height:22px;
+}
+
+.wrapper {
+  width:100%;
+  height:100%;
+  top:0;
+  position:relative;
+}
+.container {
+  position:relative;
+  width:100%;
+  height:70%;
+  top:0px;
+}
+
+.angular-google-map,
+.angular-google-map-container {
+  position: relative;
+  top:0;
+  width: 100%;
+  height: 100%;
+}
+
+
+.map-detail-view {
+  position:relative;
+
+  width:100%;
+  height:30%;
+  background-color:#eee;
+  border-top: 2px solid #bbb; 
+
+  overflow: auto; 
+}
+
+.detail-view-title {
+
+  font-size:16px;
+  font-weight:bold;
+}
+
+.detail-view-blurb {
+
+}
+
+.detail-view-content {
+  list-style: none;
+  margin-left: -10px;
+}
+
+ul.nav-bar{
+  padding:25px 20px 0px 20px;
+  display:inline-block;
+  margin-left: 250px;
+  margin-top: 50px;
+}
+
+.nav-bar li {
+   display:inherit;
+   list-style: none;
+   margin:0px;
+
+}
+
+.nav-item > a {
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: bolder;
+}
+
+.nav-item.selected > a {
+  color:white;
+  background-repeat:no-repeat;
+}
+
+.nav-item.list.selected > a {
+    padding: 7px 16px 14px 12px;
+    background-image: url(../img/list-selected.png);
+}
+
+.nav-item.map.selected > a {
+   padding: 7px 14px 14px 12px;
+   background-image: url(../img/map-selected.png);
+}
+
+.nav-item.map:not(.selected) > a{
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+    background-color: white;
+    padding: 6px 13px;
+
+  }
+
+.nav-item.list:not(.selected) > a {
+  width: 43px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  background-color: white;
+  color: #C90A29;
+  padding: 6px 13px;
+
+}
+
+.detail-table {
+  border-collapse: collapse;
+  background-color: white;
+  width:100%;
+}
+
+.detail-table tr:nth-child(even)
+{
+  background-color: #eee;
+}
+
+.detail-table.list {
+}
+
+.detail-table-header {
+  background-color: #414141;
+  text-align: left;
+  color:white;
+  border:none;
+}
+
+.detail-table-header th {
+  border-left: 1px solid #bbb;
+  border-right: 1px solid #bbb;
+  padding:8px 10px;
+
+}
+
+.detail-table-header th:hover
+{
+    cursor: pointer;
+}
+
+.detail-row {
+  border-bottom: 1px solid #bbb;
+}
+
+.detail-table tbody tr:hover {
+  background-color:  #FFF9DF;
+}
+
+.detail-row td {
+  padding:8px 10px;
+  min-width:100px;
+}
+
+input[type="search"] {
+
+  height:25px;
+  font-size:14px;
+  -webkit-appearance:none;
+  border: solid 1px #C90A29;
+}
+
+
+
+

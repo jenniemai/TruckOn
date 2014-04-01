@@ -1,0 +1,24 @@
+<input id="list-search-id" class="search-box" type="search" placeholder="Filter by Name.." ng-model="query1">
+<table class="detail-table">
+    <thead class="detail-table-header">
+        <tr>
+            <th ng-click="predicate = 'name'; reverse=!reverse">Name</th>
+            <th ng-click="predicate = 'description'; reverse=!reverse">Description</th>
+            <th ng-click="predicate = 'address'; reverse=!reverse">Location</th>
+            <th ng-click="predicate = 'schedule[0].startTime'; reverse=!reverse">Open Times</th>
+            <th ng-click="predicate = 'facilityType'; reverse=!reverse">Facility</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="detail-row" ng-repeat="foodtruck in foodTrucks | filter:query1 | orderBy:predicate:reverse">
+            <td>{{foodtruck.name}}</td>
+            <td>{{foodtruck.description}}</td>
+            <td>{{foodtruck.address}}</td>
+             <td>{{foodtruck.schedule[0].startTime}} to {{foodtruck.schedule[0].endTime}}</td>
+            <td>{{foodtruck.facilityType}}</td>
+
+        </tr>
+    </tbody>
+</table>
+
