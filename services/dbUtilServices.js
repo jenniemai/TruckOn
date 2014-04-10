@@ -182,18 +182,10 @@ function addFoodTruckstoStore(foodtrucks)
    //note: the DB was configured to make the truck name unique. 
    var collection = getFoodTruckCollection();
    collection.ensureIndex({'name': 1}, {unique: true}, function(a,b){});
-   var i;
-   for(i = 0; i < foodtrucks.length; ++i)
-   {
-      var foodtruck = foodtrucks[i];
-
-    collection.insert({name: foodtruck.name, approvedDate : foodtruck.approvedDate, permit : foodtruck.permit, 
-                                  locations: foodtruck.locations, description : foodtruck.description, facilityType: foodtruck.facilityType }, 
-                                  function(err, result) { 
+   collection.insert(foodtrucks,  function(err, result) { 
                                     if (err) { console.log("problem updating db") }
                                     if (result) { }
                                   });
-   }
 }
 
 //Helper Class to keep track of duplicates
