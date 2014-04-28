@@ -1,9 +1,10 @@
 'use strict';
 
 /* Controllers */
-angular.module('foodTruckApp.controllers', ["google-maps"]).
-controller('controller', ['$scope', '$http',
-    function ($scope, $http) {
+var myApp = angular.module('foodTruckApp.controllers', ["google-maps"]);
+
+myApp.controller('controller', ['$scope', '$http', 'currentFoodTruck',
+    function ($scope, $http, currentFoodTruck) {
 
         $scope.clusterLevel = 3;
 
@@ -32,6 +33,22 @@ controller('controller', ['$scope', '$http',
                     gridSize: 60,
                     ignoreHidden: true,
                     minimumClusterSize: $scope.clusterLevel
+                },
+                templatedInfoWindow: {
+                    coords: {
+                        latitude: 37.763468,
+                        longitude: -122.416314
+                    },
+                    options: {
+                        disableAutoPan: true
+                    },
+                    show: false,
+                    templateUrl: 'partials/infoWindowContent.html',
+                    templateParameter: {
+                        message: 'passed in from the opener'
+                    },
+                    control: {}
+
                 }
             }
             return mapModel;
@@ -83,11 +100,11 @@ controller('controller', ['$scope', '$http',
             }($scope.foodTrucks);
 
             _.each($scope.gmarkers, function(marker) { 
-                        marker.onClick = function () {
-                             var foodtruck = $scope.foodTrucks[marker.foodtruckId];
-                                setInfoWindow(foodtruck); //TODO: the infoWindow directive had performance issues. Work-around.
-                        } 
-             });
+                marker.onClick = function () {
+                    var foodtruck = $scope.foodTrucks[marker.foodtruckId];
+                    setInfoWindow(foodtruck, true); 
+                } 
+            });
 
             //initialize the map and visibleTrucks to the full set
             $scope.map.markers = $scope.gmarkers;
@@ -122,54 +139,68 @@ controller('controller', ['$scope', '$http',
             }
         }
 
-        //Work-around is to use one infoWindow instance and to manually move/open it (instead of via scope refresh)
-        var infowindow = new google.maps.InfoWindow({
-            size: new google.maps.Size(50, 50)
-        });
-
-
-        var setInfoWindow = function (foodtruck) {
+        var setInfoWindow = function (foodtruck, manuallyUpdateScope) {
 
             if (foodtruck && $scope.map.control && $scope.map.control.getGMap) {
-                var map = $scope.map.control.getGMap();
 
-                var content = formatSchedule(foodtruck.name, foodtruck.description, foodtruck.schedule);
+                if( currentFoodTruck.getFoodTruck() == foodtruck) {
+                    currentFoodTruck.openInfo($scope.map.control.getGMap());
+                }
+                else {
+                    currentFoodTruck.setFoodTruck(foodtruck, $scope.map.templatedInfoWindow.control.getInfoWindow());
+                    $scope.map.templatedInfoWindow.show = true;
+                    $scope.map.templatedInfoWindow.coords = {latitude: foodtruck.latitude, longitude: foodtruck.longitude};
+                    if(manuallyUpdateScope)
+                        $scope.$apply();
+                }
+            }
+        };
+    }
+]);
 
-                infowindow.setContent(content);
-                infowindow.setPosition(new google.maps.LatLng(foodtruck.latitude, foodtruck.longitude));
-                infowindow.open(map);
+myApp.controller('infoController', ['$scope', '$http', 'currentFoodTruck',
+    function InfoController($scope, $http, currentFoodTruck) {
+   
+        if (currentFoodTruck.getFoodTruck())
+        {
+            $scope.name = currentFoodTruck.getFoodTruck().name;
+            $scope.description = currentFoodTruck.getFoodTruck().description;
+            $scope.schedules = currentFoodTruck.getSchedule();
+            currentFoodTruck.getReviews(); //get from server
+        }
 
+        $scope.getReviews = function() {
+            return currentFoodTruck.reviews(); //cached reviews
+        }
+
+        $scope.openEditor = function() {
+            currentFoodTruck.setOpenEditor(true);
+        };
+
+    }]);
+
+myApp.controller('newReviewController', ['$scope', '$http', 'currentFoodTruck',
+    function InfoController($scope, $http, currentFoodTruck) {
+        $scope.newReview;
+        $scope.closeEditor = function() {
+            if ($scope.newReview)
+                currentFoodTruck.getReviews();//update reviews from server
+            currentFoodTruck.setOpenEditor(false);
+            delete $scope.newReview;
+        };
+
+        $scope.showEditor = function() {
+            if (currentFoodTruck.getFoodTruck())
+                $scope.name = currentFoodTruck.getFoodTruck().name; //update current name when show
+            return currentFoodTruck.isOpenEditor();
+        };
+
+        $scope.submitReview = function() {
+            if ($scope.newReview && $scope.user)
+            {
+                var newReview = { name: $scope.user, review: $scope.newReview , truck: $scope.name};
+                currentFoodTruck.createReview(newReview, $scope.closeEditor);
             }
         };
 
-
-        //todo: should do in directive
-        var formatSchedule = function(name, description, schedule){
-            var content = name + "<br>";
-            content += description + "<br>";
-            var prevStart, prevEnd, currStr = "";
-            var daysStr = new Array();
-
-            _.each(schedule, function(curr) {
-
-                if (!prevStart || (prevStart == curr.startTime && prevEnd == curr.endTime))
-                {  
-                    currStr += curr.dayOfWeek + ", "; 
-                    prevStart = curr.startTime;
-                    prevEnd = curr.endTime;             
-                }else{
-                    daysStr.push({days: currStr, start: prevStart, end: prevEnd});
-                    currStr = "";
-                    prevStart = curr.startTime;
-                    prevEnd = curr.endTime;
-                }
-            });
-             daysStr.push({days: currStr, start: prevStart, end: prevEnd});
-
-            _.each(daysStr, function(next) {
-                content += (next.days + ": " + next.start + " - " + next.end + "<br>"); 
-            });
-            return content;
-        }
-    }
-]);
+    }]);

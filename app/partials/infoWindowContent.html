@@ -1,0 +1,15 @@
+<div class="info-container" ng-controller="infoController" >
+	<div class="h2">{{name}}</div>		
+
+    <div ng-repeat="schedule in schedules">
+    	<div>{{schedule.days}}: {{schedule.start}} - {{schedule.end}}</div>
+    </div>
+
+    <div class="info-line"> {{description}}</div>
+    <div class="h2">Reviews<a class="plus" alt="add a review" ng-click="openEditor()">+</a></div>
+    
+    <div ng-repeat="review in getReviews()">
+    	<div><strong>{{review.user}}</strong>: {{review.review}}</div>
+    </div>
+
+</div>

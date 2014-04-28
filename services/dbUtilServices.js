@@ -9,10 +9,19 @@ var db = mongo.db(configProperties.getDBConnection(), {native_parser:true});
  */
 exports.getFoodTrucks = function(callback)
 {
+  var collection = getFoodTruckCollection();
+  collection.find().toArray(callback);
 
-      var collection = getFoodTruckCollection();
-      collection.find().toArray(callback);
+}
 
+exports.getReviews = function(name, callback)
+{
+  var collection = getReviews(name, callback);
+}
+
+exports.addReview = function addReview(review, writeToResponse)
+{
+  addReviewToStore(review, writeToResponse);
 }
 
 /**
@@ -34,26 +43,26 @@ exports.updateFoodTrucksList = function()
 function updateFoodTrucksFromPermitList(callback)
 {
         
-          var json = __dirname + "/../server/data/foodTruckPermits.json";
+  var json = __dirname + "/../server/data/foodTruckPermits.json";
 
-          var fs = require('fs');
-          var file = json;
-          var results = '';
-          fs.readFile(file, 'utf8', function (err, data) {
-                if (err) {
-                  console.log('Error: ' + err);
-                  return;
-                }
-                results = JSON.parse(data);
+  var fs = require('fs');
+  var file = json;
+  var results = '';
+  fs.readFile(file, 'utf8', function (err, data) {
+    if (err) {
+      console.log('Error: ' + err);
+      return;
+    }
+    results = JSON.parse(data);
 
-                console.log(results.length);
+    console.log(results.length);
 
-               var trucksMeta = processPermitResults(results);
-               console.log(trucksMeta);
+   var trucksMeta = processPermitResults(results);
+   console.log(trucksMeta);
 
-               callback(trucksMeta);
+   callback(trucksMeta);
 
-          });
+  });
 }
 
 function processPermitResults(results)
@@ -173,6 +182,11 @@ function getFoodTruckCollection()
   return db.collection('foodTrucks');
 }
 
+function getReviewsCollection()
+{
+  return db.collection('reviews');
+}
+
 /** 
  * Add the processed list to the store. 
  */
@@ -185,7 +199,21 @@ function addFoodTruckstoStore(foodtrucks)
    collection.insert(foodtrucks,  function(err, result) { 
                                     if (err) { console.log("problem updating db") }
                                     if (result) { }
-                                  });
+    });
+}
+
+function getReviews(name, callback)
+{
+  var collection = getReviewsCollection();
+  collection.find({truck: name} ).toArray(callback);
+
+}
+
+function addReviewToStore(review, callback)
+{
+  var collection = getReviewsCollection();
+
+  collection.insert(review, callback)
 }
 
 //Helper Class to keep track of duplicates
@@ -217,7 +245,7 @@ Hasher.prototype.getLocation = function getName(name, address)
 
 Hasher.prototype.getIndex = function getIndex(name)
 {
-    if (this.getHash(name))
+  if (this.getHash(name))
       return this.truckHash[name].idx;
     return null;
 }

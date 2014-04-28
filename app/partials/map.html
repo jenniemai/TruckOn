@@ -1,4 +1,5 @@
-<div class="wrapper">
+
+<div class="wrapper" ng-controller="controller">
     <div class="container">
 
         <input id="map-search-id" class="search-box" type="search" placeholder="Filter and tab.." ng-model="query" ng-blur="map.updateMarkers(filteredMarkers)">
@@ -10,7 +11,25 @@
         <google-map center="map.center" zoom="map.zoom" draggable="true" control="map.control" events="map.events" bounds="map.bounds">
             <markers models="map.markers" coords="'self'" click="'onClick'" icon="'icon'" doCluster="map.doCluster" clusterOptions="map.clusterOptions">
             </markers>
+
         </google-map>
+
+        <info-window style="display:none" map="map.control" show="map.templatedInfoWindow.show" coords="map.templatedInfoWindow.coords" control="map.templatedInfoWindow.control">
+        </info-window>
+        <div class="review-outer" ng-controller="newReviewController" ng-cloak ng-show="showEditor()">
+            <div class="modal" ></div>
+            <div class="review-content">
+                <div>
+                    <div class="review-title">Your Review for {{name}}</div>
+                    <img class="info-close" src="/img/close.png" ng-click="closeEditor()"/>
+                </div>
+                <div>Name:<input ng-model="user"></input></div>
+                <div>Comment:</div>
+                <div class="comment-wrapper"><textarea class="comment-box" ng-model="newReview"></textarea></div>
+                <div class="button" ng-click="submitReview()">Add</div>
+            </div>
+        </div>
+
     </div>
 
     <div class="map-detail-view">

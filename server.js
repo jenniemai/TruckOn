@@ -14,6 +14,7 @@ app.use('/lib', express.static(__dirname + '/app/lib'));
 app.use('/views', express.static(__dirname + '/views/'));
 
 app.use(express.urlencoded());
+app.use(express.json());
 
 //todo: read config file 
 if(configProperties.isUpdateFoodTruckList())
@@ -23,6 +24,11 @@ if(configProperties.isUpdateFoodTruckList())
 }
 
 app.get('/foodtrucks/all/', webEndPoints.getFoodTrucks());
+
+app.get('/reviews/:truck', webEndPoints.getReviews());
+
+app.post('/reviews/', webEndPoints.addReview());
+
 
 var server = app.listen(configProperties.getServerPort(), function() {
     console.log('Listening on port %d', server.address().port);
