@@ -113,12 +113,12 @@ ul.nav-bar {
 	font-weight: bolder;
 }
 
-.nav-item.selected>a {
+.nav-item.selected > a {
 	color: white;
 	background-repeat: no-repeat;
 }
 
-.nav-item.list.selected>a {
+.nav-item.list.selected > a {
 	padding: 7px 16px 14px 12px;
 	background-image: url(../img/list-selected.png);
 }
@@ -128,14 +128,14 @@ ul.nav-bar {
 	background-image: url(../img/map-selected.png);
 }
 
-.nav-item.map:not (.selected ) >a {
+.nav-item.map:not(.selected) > a {
 	border-bottom-left-radius: 3px;
 	border-top-left-radius: 3px;
 	background-color: white;
 	padding: 6px 13px;
 }
 
-.nav-item.list:not (.selected ) >a {
+.nav-item.list:not(.selected) > a {
 	width: 43px;
 	border-top-right-radius: 3px;
 	border-bottom-right-radius: 3px;
