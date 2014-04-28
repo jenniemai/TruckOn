@@ -23,9 +23,8 @@ in map or list format.
         -- drag around the map and the list will automatically update in real time. 
 
     The Map view uses Google Maps to visualize the food truck data. It uses the AngularJS 
-    Google Maps directive API for the map, markers, and clustering. The InfoWindow was done using
-    Google Maps V3 API directly. I had some issues with performance but more investigation is 
-    needed to determine the cause.
+    Google Maps directive API for the map, markers, and clustering. I did not use the AngularJS InfoWindow "window"
+    directive. I needed more control for what I wanted to do, so I created my own InfoWindow directive. 
 
   == List View == 
         -- You can type into the searchbox and the list will automatically update realtime. 
@@ -69,8 +68,6 @@ in map or list format.
 
   3) go to localhost:3000/
 
-  NOTE: DB config - MongoSkin has a known issue with EventEmitters (errors are shown when data is retrieved), 
-  but does not affect the running of the app. 
 
   NOTE2: I did not have a chance to incorporate more filtering for schedule data. The data is currently a composite of FoodTruck object.
   It may make sense to make Schedules a collection to do querying on it. 
