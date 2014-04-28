@@ -6,8 +6,8 @@ var myApp = angular.module('foodTruckApp.services', []);
 myApp.service('currentFoodTruck', function($http) {
     var foodtruck;
     var prevTruck;
-    var prevReview;
     var infoWindow;
+    var gmap;
     var daysStr = new Array();
     var reviewsArray = new Array();
     var isOpen = false;
@@ -18,7 +18,8 @@ myApp.service('currentFoodTruck', function($http) {
         },
         setFoodTruck: function(value, info) {
             foodtruck = value;
-            infoWindow = info;
+            infoWindow = info.templatedInfoWindow.control.getInfoWindow();
+            gmap = info.control.getGMap();
         },
         getInfoWindow: function() {
         	return infoWindow;
@@ -67,7 +68,6 @@ myApp.service('currentFoodTruck', function($http) {
 
         	if(foodtruck)
         	{
-        		prevReview = foodtruck;
         		reviewsArray = new Array();
         	    //get reviews
                 $http.get('/reviews/' + foodtruck.name).success(function (data) {
@@ -77,6 +77,7 @@ myApp.service('currentFoodTruck', function($http) {
                     {
                     	reviewsArray = reviews;
                         infoWindow.setContent(infoWindow.getContent()); // force redraw info window canvas
+                        infoWindow.open(gmap);
                         if (callback)
                             callback(reviews);
                     }

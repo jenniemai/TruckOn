@@ -147,7 +147,7 @@ myApp.controller('controller', ['$scope', '$http', 'currentFoodTruck',
                     currentFoodTruck.openInfo($scope.map.control.getGMap());
                 }
                 else {
-                    currentFoodTruck.setFoodTruck(foodtruck, $scope.map.templatedInfoWindow.control.getInfoWindow());
+                    currentFoodTruck.setFoodTruck(foodtruck, $scope.map);
                     $scope.map.templatedInfoWindow.show = true;
                     $scope.map.templatedInfoWindow.coords = {latitude: foodtruck.latitude, longitude: foodtruck.longitude};
                     if(manuallyUpdateScope)
