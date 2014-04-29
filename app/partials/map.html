@@ -2,7 +2,7 @@
 <div class="wrapper" ng-controller="controller">
     <div class="container">
 
-        <input id="map-search-id" class="search-box" type="search" placeholder="Filter.." ng-model="query" ng-blur="filterMap(query)"> 
+        <input id="map-search-id" class="search-box" type="search" placeholder="Filter.." ng-model="query"> 
 
         <google-map center="map.center" zoom="map.zoom" draggable="true" control="map.control" events="map.events" bounds="map.bounds">
             <markers models="map.markers" coords="'self'" click="'onClick'" icon="'icon'" doCluster="map.doCluster" clusterOptions="map.clusterOptions">

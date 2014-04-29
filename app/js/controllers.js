@@ -112,22 +112,16 @@ myApp.controller('controller', ['$scope', '$http', '$filter', 'currentFoodTruck'
 
         });
 
-        $scope.$watch("query", function(query){
-            $scope.filterMap(query, true);
-        });
-
-        //only update the visible trucks list view onblur. This operation is currently too slow to keep up with real time filtering.
-        $scope.filterMap = function(query, skipUpdate) {
+        $scope.$watch("query", function(query){       
             if (!$scope.gmarkers){
                 return;
             }
             $scope.map.markers = $filter("filter")($scope.gmarkers, query);
-            $scope.map.templatedInfoWindow.show = false;
-            if (!skipUpdate)
-                $scope.updateVisibleTrucks = true;
-        };
+            $scope.updateVisibleTrucks = true;
+        });
 
         $scope.$watch("updateVisibleTrucks", function(newValue, oldValue) {
+            $scope.map.templatedInfoWindow.show = false;
             if (newValue && newValue != oldValue) {
                 $scope.visibleTrucks = checkMarkerBounds($scope.map.markers);
                 $scope.updateVisibleTrucks = false;
