@@ -122,12 +122,12 @@ myApp.controller('controller', ['$scope', '$http', '$filter', 'currentFoodTruck'
                 return;
             }
             $scope.map.markers = $filter("filter")($scope.gmarkers, query);
+            $scope.map.templatedInfoWindow.show = false;
             if (!skipUpdate)
                 $scope.updateVisibleTrucks = true;
         };
 
         $scope.$watch("updateVisibleTrucks", function(newValue, oldValue) {
-            $scope.map.templatedInfoWindow.show = false;
             if (newValue && newValue != oldValue) {
                 $scope.visibleTrucks = checkMarkerBounds($scope.map.markers);
                 $scope.updateVisibleTrucks = false;
