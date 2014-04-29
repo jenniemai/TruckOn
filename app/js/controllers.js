@@ -3,8 +3,8 @@
 /* Controllers */
 var myApp = angular.module('foodTruckApp.controllers', ["google-maps"]);
 
-myApp.controller('controller', ['$scope', '$http', 'currentFoodTruck',
-    function ($scope, $http, currentFoodTruck) {
+myApp.controller('controller', ['$scope', '$http', '$filter', 'currentFoodTruck',
+    function ($scope, $http, $filter, currentFoodTruck) {
 
         $scope.clusterLevel = 3;
 
@@ -22,7 +22,7 @@ myApp.controller('controller', ['$scope', '$http', 'currentFoodTruck',
                 events: {
                     //when the map bounds change, update the visible list of trucks
                     bounds_changed: function () {
-                        $scope.visibleTrucks = checkMarkerBounds($scope.gmarkers);
+                        $scope.visibleTrucks = checkMarkerBounds($scope.map.markers);
                     }
 
                 },
@@ -112,11 +112,21 @@ myApp.controller('controller', ['$scope', '$http', 'currentFoodTruck',
 
         });
 
-        //@param filteredMarkers - markers filtered by "filter" mechanism. There is a bug with using filters directly on the markers directive.
-        $scope.map.updateMarkers = function (filteredMarkers) {
-            $scope.map.markers = filteredMarkers;
-            $scope.visibleTrucks = checkMarkerBounds(filteredMarkers);
-        };
+        $scope.$watch("query", function(query){
+            if (!$scope.gmarkers){
+                return;
+            }
+            $scope.map.markers = $filter("filter")($scope.gmarkers, query);
+            $scope.updateVisibleTrucks = true;
+        });
+
+        $scope.$watch("updateVisibleTrucks", function(newValue, oldValue) {
+            $scope.map.templatedInfoWindow.show = false;
+            if (newValue && newValue != oldValue) {
+                $scope.visibleTrucks = checkMarkerBounds($scope.map.markers);
+                $scope.updateVisibleTrucks = false;
+            }
+        });
 
         //@param foodtruck - foodtruck model used to set the info window
         $scope.updateMarker = function (foodtruck) {

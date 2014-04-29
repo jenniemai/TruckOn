@@ -73,7 +73,7 @@ myApp.service('currentFoodTruck', function($http) {
                 $http.get('/reviews/' + foodtruck.name).success(function (data) {
                     var reviews = data;
                     //todo: cache it
-                    if (reviews)
+                    if (reviews && reviews.length > 0)
                     {
                     	reviewsArray = reviews;
                         infoWindow.setContent(infoWindow.getContent()); // force redraw info window canvas

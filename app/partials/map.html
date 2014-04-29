@@ -2,16 +2,11 @@
 <div class="wrapper" ng-controller="controller">
     <div class="container">
 
-        <input id="map-search-id" class="search-box" type="search" placeholder="Filter and tab.." ng-model="query" ng-blur="map.updateMarkers(filteredMarkers)">
-
-        <!-- works around JS error when directly using filter in markers. This will filter the list in a separate repeater which
-        will update the map.markers model -->
-        <d style="display:none" ng-repeat="marker in filteredMarkers = (gmarkers | filter:query)"></d>
+        <input id="map-search-id" class="search-box" type="search" placeholder="Filter.." ng-model="query"> 
 
         <google-map center="map.center" zoom="map.zoom" draggable="true" control="map.control" events="map.events" bounds="map.bounds">
             <markers models="map.markers" coords="'self'" click="'onClick'" icon="'icon'" doCluster="map.doCluster" clusterOptions="map.clusterOptions">
             </markers>
-
         </google-map>
 
         <info-window style="display:none" map="map.control" show="map.templatedInfoWindow.show" coords="map.templatedInfoWindow.coords" control="map.templatedInfoWindow.control">
