@@ -113,20 +113,15 @@ myApp.controller('controller', ['$scope', '$http', '$filter', 'currentFoodTruck'
         });
 
         $scope.$watch("query", function(query){       
-            if (!$scope.gmarkers){
+            if (!$scope.gmarkers || !query || query.length <= 1){
                 return;
             }
-            $scope.map.markers = $filter("filter")($scope.gmarkers, query);
-            $scope.updateVisibleTrucks = true;
+            $scope.map.templatedInfoWindow.show = false;
+            var filtered = $filter("filter")($scope.gmarkers, query );
+            $scope.visibleTrucks = checkMarkerBounds(filtered); 
+            $scope.map.markers = filtered;
         });
 
-        $scope.$watch("updateVisibleTrucks", function(newValue, oldValue) {
-            $scope.map.templatedInfoWindow.show = false;
-            if (newValue && newValue != oldValue) {
-                $scope.visibleTrucks = checkMarkerBounds($scope.map.markers);
-                $scope.updateVisibleTrucks = false;
-            }
-        });
 
         //@param foodtruck - foodtruck model used to set the info window
         $scope.updateMarker = function (foodtruck) {
